@@ -221,17 +221,38 @@ public:
 		cout << endl;
 	}
 
+
+	//New Method
+	//Verify linked list and print every other element starting from the first.
+	//Initializes pointer to the top of the list.
+	//Initialize count and set to 0.
+	//If count equals 0, prints to the user that the list is empty.
+	//Advances the current pointer to the next node.
 	void every_other_element() {
-
+		Node* current = head;
+		int count = 0;
+		if (!current) {
+			cout << "List is empty." << endl;
+			return;
+		}
+		while(current) {
+			if (count % 2 == 0)
+				cout << current->data << " ";
+			current = current->next;
+			count++;
+				
+		}
+		//End Loop, and prints new line.
+		cout << endl;
 	}
-
-
 };
 
-//Dummy Statement
+
 int main() {
-	cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS;
-	compiler warning;
+	
+
+
+
 		return 0;
 }
 
