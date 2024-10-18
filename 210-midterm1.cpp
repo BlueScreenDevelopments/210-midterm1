@@ -36,6 +36,7 @@ public:
 	DoublyLinkedList() { head = nullptr; tail = nullptr; }
 
 	//Inserts a new node after a position in the list.
+	//Verify position, create node, find correct position in list, adjust pointers for new node.
 	void insert_after(int value, int position) {
 		if (position < 0) {
 			cout << "Position must be >= 0." << endl;
@@ -67,6 +68,9 @@ public:
 		temp->next = newNode;
 	}
 
+	//Deletes first node that contains a specified value.
+	//Verify the list to find node
+	//Adjust pointers of nodes to find the node to be removed.
 	void delete_val(int value) {
 		if (!head) return;
 		Node* temp = head;
@@ -83,6 +87,9 @@ public:
 			tail = temp->prev;
 		delete temp;
 	}
+	//Deletes the node at a specific position
+	//Handles edge cases for an empty list or invalid position.
+	//Pointers adjust to remove node.
 	void delete_pos(int pos) {
 		if (!head) {
 			cout << "List is empty." << endl;
@@ -114,6 +121,10 @@ public:
 		temp->next->prev = tempPrev;
 		delete temp;
 	}
+
+	//Adds a new node with the value "v" at the end of the list.
+	//Handles case of empty list.
+	//Adjust pointers for new node.
 	void push_back(int v) {
 		Node* newNode = new Node(v);
 		if (!tail)
@@ -124,6 +135,9 @@ public:
 			tail = newNode;
 		}
 	}
+	//Adds a new node with the value of "V" at the beginning of the list.
+	//Handles case of empty list.
+	//Adjust pointers for new node.
 	void push_front(int v) {
 		Node* newNode = new Node(v);
 		if (!head)
@@ -134,6 +148,7 @@ public:
 			head = newNode;
 		}
 	}
+	//
 	void pop_front() {
 		if (!head) {
 			cout << "List is empty." << endl;
