@@ -249,9 +249,24 @@ public:
 
 
 int main() {
-	
 
+	//Demonstrating Link Functionality
+	//Setup list for showing user from 1-6
+	DoublyLinkedList dll;
+	dll.push_back(1);
+	dll.push_back(2);
+	dll.push_back(3);
+	dll.push_back(4);
+	dll.push_back(5);
+	dll.push_back(6);
 
+	//Print to user original list.
+	cout << "Original List: ";
+	dll.print();
+
+	//Print to user every other list.
+	cout << "Every Other Element ";
+	dll.every_other_element();
 
 		return 0;
 }
