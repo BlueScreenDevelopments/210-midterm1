@@ -7,9 +7,14 @@
 #include <iostream>
 using namespace std;
 
+//Declarations
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
 
+//Implementing DoublyLinkList data structure.
+
 class DoublyLinkedList {
+
+//Private node structure, initialize, point to, and holds value of the node.
 private:
 	struct Node {
 		int data;
@@ -21,12 +26,16 @@ private:
 			next = n;
 		}
 	};
+
+	//Pointing to the top and bottom of a node in a list.
 	Node* head;
 	Node* tail;
 
+	//Sets an empty DoublyLinkedList to head and tail node.
 public:
 	DoublyLinkedList() { head = nullptr; tail = nullptr; }
 
+	//Inserts a new node after a position in the list.
 	void insert_after(int value, int position) {
 		if (position < 0) {
 			cout << "Position must be >= 0." << endl;
