@@ -11,7 +11,6 @@ using namespace std;
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
 
 //Implementing DoublyLinkList data structure.
-
 class DoublyLinkedList {
 
 //Private node structure, initialize, point to, and holds value of the node.
@@ -148,7 +147,10 @@ public:
 			head = newNode;
 		}
 	}
-	//
+	//Removes first node in the list.
+	//Empty List.
+	//Adjust Pointers.
+	//Print to user that the list is empty.
 	void pop_front() {
 		if (!head) {
 			cout << "List is empty." << endl;
@@ -163,6 +165,10 @@ public:
 			head = tail = nullptr;
 		delete temp;
 	}
+	//Removes the last node in a list.
+	//Empty List.
+	//Adjust pointers.
+	//Print to the user that the list is empty.
 	void pop_back() {
 		if (!tail) {
 			cout << "List is empty." << endl;
@@ -177,6 +183,9 @@ public:
 			head = tail = nullptr;
 		delete temp;
 	}
+
+	//Destructor cleans up all nodes in the list. 
+	//Prevention of Memory links when DoublyLinkedList is destroyed.
 	~DoublyLinkedList() {
 		while (head) {
 			Node* temp = head;
@@ -184,6 +193,9 @@ public:
 			delete temp;
 		}
 	}
+
+	// Print output!
+
 	void print() {
 		Node* current = head;
 		if (!current) {
@@ -208,9 +220,18 @@ public:
 		}
 		cout << endl;
 	}
+
+	void every_other_element() {
+
+	}
+
+
 };
+
+//Dummy Statement
 int main() {
-	cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS; // dummy statement to avoid
-	compiler warning
+	cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS;
+	compiler warning;
 		return 0;
 }
+
